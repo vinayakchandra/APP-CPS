@@ -64,8 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function simulateLogin(username, password) {
         showLoadingState();
         setTimeout(() => {
-            if (username === 'admin' && password === 'admin@786') {
+            if (username === 'ashita' && password === 'admin@786') {
                 loginSuccess();
+            } else if (username === 'admin' && password === 'admin@786') {
+                adminScreen()
             } else {
                 loginFailure();
             }
@@ -92,5 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function loginFailure() {
         alert('Login failed. Please check your username and password.');
+    }
+
+    function adminScreen() {
+        window.location.href = 'http://127.0.0.1:8081/swagger-ui/index.html#/';
     }
 });
